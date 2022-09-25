@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub') # the ID of the docker credentials that you created in step 5
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub') 
 	}
 
 	stages {
@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t bharathirajatut/nodeapp:latest .' # your docker hub name/repo
+				sh 'docker build -t ahmedwahid/jenkins-test:latest .' 
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push bharathirajatut/nodeapp:latest' # your dockerhub name/repo
+				sh 'docker push ahmedwahid/jenkins-test:latest'
 			}
 		}
 	}
